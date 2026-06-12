@@ -1,15 +1,20 @@
-﻿Console.Write("Informe a temperatura atual: ");
-double temperatura = double.Parse(Console.ReadLine()!);
+﻿Console.Write("Informe o valor total da compra: ");
+double valorOriginal = double.Parse(Console.ReadLine()!);
 
-if (temperatura < 18)
+double desconto;
+double valorFinal;
+
+if (valorOriginal >= 200)
 {
-    Console.WriteLine("Ambiente frio.");
-}
-else if (temperatura <= 26)
-{
-    Console.WriteLine("Ambiente confortável.");
+    desconto = valorOriginal * 0.10;
 }
 else
 {
-    Console.WriteLine("Ambiente quente.");
+    desconto = 0;
 }
+
+valorFinal = valorOriginal - desconto;
+
+Console.WriteLine("Valor original: R$ " + valorOriginal);
+Console.WriteLine("Desconto aplicado: R$ " + desconto);
+Console.WriteLine("Valor final: R$ " + valorFinal);
